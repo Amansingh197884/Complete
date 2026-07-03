@@ -7,7 +7,7 @@ const heroImages = [
   "https://i.pinimg.com/1200x/c5/6e/94/c56e940486969a64984fdf3e3d1f2f14.jpg"
 ];
 
-export default function App() {
+export default function Home() {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false); 
