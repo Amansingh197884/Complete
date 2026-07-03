@@ -1,11 +1,11 @@
 import React from 'react';
-import Home from './Components/Home'
-import AboutUs from './components/AboutUs';
-import VisionMission from './components/VisionMission';
-import Amenities from './components/Amenities';
-import Testimonials from './components/Testimonials';
-import ContactUs from './components/ContactUs';
-import Footer from './components/Footer';
+import Home from './components/Home.jsx'
+import AboutUs from './components/AboutUs.jsx';
+import VisionMission from './components/VisionMission.jsx';
+import Amenities from './components/Amenities.jsx';
+import Testimonials from './components/Testimonials.jsx';
+import ContactUs from './components/ContactUs.jsx';
+import Footer from './components/Footer.jsx';
 
 export default function App() {
   return (
