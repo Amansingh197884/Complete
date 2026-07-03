@@ -26,7 +26,7 @@ export default function ContactUs() {
             setFormData({ name: '', email: '', message: '' });
             setTimeout(() => setSent(false), 3000);
         } catch (error) {
-            console.error("Error sending data to Google Sheet:", error);
+            console.error("Error", error);
             
         } finally {
             setLoading(false);
