@@ -10,7 +10,7 @@ export default function ContactUs() {
         e.preventDefault();
         setLoading(true);
 
-        const GOOGLE_SCRIPT_URL = "AKfycbz5_MbxmluQg3REcTF6CHzU3hAyFJbx3WvZvxY29iVZIAmjdJuU_F8zG7BZw6Dst6X3";
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxsgvO_tyskUEU2CKGsyqThWQmzRRM8SLGjNKzJD1IKT01rLDNcoUbS5wekTD2H8uM/exec";
 
         try {
             await fetch(GOOGLE_SCRIPT_URL, {
@@ -27,7 +27,7 @@ export default function ContactUs() {
             setTimeout(() => setSent(false), 3000);
         } catch (error) {
             console.error("Error sending data to Google Sheet:", error);
-            alert("Kuch galti hui, please dobara try karein.");
+            
         } finally {
             setLoading(false);
         }
