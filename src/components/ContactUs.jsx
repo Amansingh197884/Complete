@@ -10,7 +10,7 @@ export default function ContactUs() {
         e.preventDefault();
         setLoading(true);
 
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxm1Qh45A0n03w3aPgpzAN_pD0L4ToKdcsJ6-C4j9f4ibfby692HSRPTAyWn_PfIeNg/exec";
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyz44nlE8dYDWpnGJFWBIBu497i2Oh2wnD4FJLg4Ks/dev";
 
         try {
             await fetch(GOOGLE_SCRIPT_URL, {
