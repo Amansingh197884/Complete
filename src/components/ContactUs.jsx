@@ -4,12 +4,33 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/f
 export default function ContactUs() {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [sent, setSent] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
-        setSent(true);
-        setTimeout(() => setSent(false), 3000);
-        setFormData({ name: '', email: '', message: '' });
+        setLoading(true);
+
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxEhuep0FsO60z3u42QDmLaa99f1FowDwIxAIKZo-dTo5yCxy09dRfoFdeNsxJE45fE/exec";
+
+        try {
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            setSent(true);
+            setFormData({ name: '', email: '', message: '' });
+            setTimeout(() => setSent(false), 3000);
+        } catch (error) {
+            console.error("Error sending data to Google Sheet:", error);
+            alert("Kuch galti hui, please dobara try karein.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -50,7 +71,7 @@ export default function ContactUs() {
                             {sent ? (
                                 <div className="text-center py-5 animate__animated animate__zoomIn">
                                     <h3 className="text-success fw-bold">Message Logged!</h3>
-                                    <p className="text-muted">An operations technician will reach out directly.</p>
+                                    <p className="text-muted">Data successfully saved to Google Sheet.</p>
                                 </div>
                             ) : (
                                 <form onSubmit={onSubmit}>
@@ -66,8 +87,8 @@ export default function ContactUs() {
                                         <label className="form-label text-secondary small fw-bold text-uppercase">Message Parameters</label>
                                         <textarea className="form-control bg-dark text-white border-secondary custom-input-focus" rows="4" required value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="Outline your project timeline..."></textarea>
                                     </div>
-                                    <button type="submit" className="btn btn-primary btn-lg w-100 rounded-pill fw-bold contact-btn-hover d-flex align-items-center justify-content-center gap-2">
-                                        Send Message <FaPaperPlane size={16} />
+                                    <button type="submit" disabled={loading} className="btn btn-primary btn-lg w-100 rounded-pill fw-bold contact-btn-hover d-flex align-items-center justify-content-center gap-2">
+                                        {loading ? "Sending..." : "Send Message"} <FaPaperPlane size={16} />
                                     </button>
                                 </form>
                             )}

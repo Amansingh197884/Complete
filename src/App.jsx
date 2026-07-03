@@ -13,12 +13,12 @@ export default function App() {
       <home />
 
 
-    <Home />
-<AboutUs />
-<VisionMission />
-<Amenities />
-<Testimonials />
-<ContactUs />
+      <Home />
+      <AboutUs />
+      <VisionMission />
+      <Amenities />
+      <Testimonials />
+      <ContactUs />
     </div>
   );
 }
