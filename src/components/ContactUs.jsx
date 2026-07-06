@@ -34,31 +34,31 @@ export default function ContactUs() {
     };
 
     return (
-        <section id="contact" className="py-5 bg-dark text-white">
+        <section id="contact" className="py-5 contact text-white">
             <div className="container my-5">
                 <div className="row g-5">
                     <div className="col-lg-5 d-flex flex-column justify-content-between">
                         <div>
                             <h2 className="display-4 fw-bold mb-3">Get In Touch</h2>
-                            <p className="text-secondary mb-5">Drop us a line to discuss setup architecture, system planning, or structural property onboarding maps.</p>
+                            <p className="text-white mb-5">Drop us a line to discuss setup architecture, system planning, or structural property onboarding maps.</p>
                         </div>
                         <div className="d-flex flex-column gap-4 mb-4">
-                            <div className="d-flex align-items-center gap-3">
-                                <div className="bg-primary text-white p-3 rounded-circle"><FaEnvelope /></div>
+                            <div className="d-flex align-items-center  gap-3">
+                                <div className="icon-cotcat"><FaEnvelope /></div>
                                 <div>
                                     <small className="text-secondary d-block">Email</small>
                                     <span className="fw-medium">hello@vanguardliving.com</span>
                                 </div>
                             </div>
                             <div className="d-flex align-items-center gap-3">
-                                <div className="bg-primary text-white p-3 rounded-circle"><FaPhone /></div>
+                                <div className="icon-cotcat"><FaPhone /></div>
                                 <div>
                                     <small className="text-secondary d-block">Phone</small>
                                     <span className="fw-medium">+1 (555) 234-5678</span>
                                 </div>
                             </div>
                             <div className="d-flex align-items-center gap-3">
-                                <div className="bg-primary text-white p-3 rounded-circle"><FaMapMarkerAlt /></div>
+                                <div className="icon-cotcat"><FaMapMarkerAlt /></div>
                                 <div>
                                     <small className="text-secondary d-block">HQ Location</small>
                                     <span className="fw-medium">Downtown Innovation Hub, Ste 200</span>
@@ -76,18 +76,18 @@ export default function ContactUs() {
                             ) : (
                                 <form onSubmit={onSubmit}>
                                     <div className="mb-4">
-                                        <label className="form-label text-secondary small fw-bold text-uppercase">Full Name</label>
+                                        <label className="form-label  small fw-bold ">Full Name</label>
                                         <input type="text" className="form-control bg-dark text-white border-secondary custom-input-focus" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="Aman Singh" />
                                     </div>
                                     <div className="mb-4">
-                                        <label className="form-label text-secondary small fw-bold text-uppercase">Email Address</label>
+                                        <label className="form-label text-secondary small fw-bold ">Email Address</label>
                                         <input type="email" className="form-control bg-dark text-white border-secondary custom-input-focus" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="aman@example.com" />
                                     </div>
                                     <div className="mb-4">
-                                        <label className="form-label text-secondary small fw-bold text-uppercase">Message Parameters</label>
+                                        <label className="form-label text-secondary small fw-bold ">Message Parameters</label>
                                         <textarea className="form-control bg-dark text-white border-secondary custom-input-focus" rows="4" required value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="Outline your project timeline..."></textarea>
                                     </div>
-                                    <button type="submit" disabled={loading} className="btn btn-primary btn-lg w-100 rounded-pill fw-bold contact-btn-hover d-flex align-items-center justify-content-center gap-2">
+                                    <button type="submit" disabled={loading} className="btn  btn-lg w-100 rounded-pill fw-bold  d-flex align-items-center justify-content-center gap-2" style={{backgroundColor: '#c8a261', color:'#fff'}}>
                                         {loading ? "Sending..." : "Send Message"} <FaPaperPlane size={16} />
                                     </button>
                                 </form>

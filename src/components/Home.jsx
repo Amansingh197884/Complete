@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes, FaArrowRight } from 'react-icons/fa';
+import { FaBars, FaTimes, FaArrowRight, FaSearch } from 'react-icons/fa';
 
 const heroImages = [
   "https://i.pinimg.com/1200x/2e/8c/f4/2e8cf45d4b5980b2110944dfe2afe4d8.jpg",
@@ -104,12 +104,13 @@ export default function Home() {
                   </select>
                 </div>
 
-                <div className="col-md-6 border-start border-md-none py-1">
+                <div className="col-md-6 border-start border-md-none py-1 justify-content-between d-flex align-items-center">
                   <input 
                     type="text" 
                     className="form-control border-0 fs-5 py-2 shadow-none" 
-                    placeholder="Location or keywords..." 
+                    placeholder="Location or keywords... " 
                   />
+                  <FaSearch className='search me-3' size={14} />
                 </div>
 
                 <div className="col-md-3">
