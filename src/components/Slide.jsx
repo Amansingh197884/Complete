@@ -39,7 +39,6 @@ const apartmentsData = [
     location: 'Roma Norte, Ciudad de México',
     specs: '4 Guests | 2 Bedrooms | 2 Bathrooms'
   },
-  // Add more items here to test the slider behavior
 ];
 
 export default function ApartmentsSection() {
@@ -105,3 +104,11 @@ export default function ApartmentsSection() {
     </section>
   );
 }
+
+
+
+
+
+
+
+
