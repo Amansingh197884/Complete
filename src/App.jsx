@@ -24,6 +24,7 @@ export default function App() {
       <Slide />
       <Testimonials />
       <ContactUs />
+      <New />
       <Footer />
     </div>
   );

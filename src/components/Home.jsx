@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes, FaArrowRight, FaSearch } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 
 const heroImages = [
   "https://i.pinimg.com/1200x/2e/8c/f4/2e8cf45d4b5980b2110944dfe2afe4d8.jpg",
@@ -68,7 +70,7 @@ export default function Home() {
 
               <li className="nav-item">
                 <a className="btn contact-btn-custom d-inline-flex align-items-center gap-2" href="#contact" onClick={() => setIsNavOpen(false)}>
-                  Contact <FaArrowRight size={14} />
+                Contact <FaArrowRight size={14} />
                 </a>
               </li>
 
