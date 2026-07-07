@@ -747,7 +747,7 @@ position: absolute;
 .contact-hero {
   position: relative;
   height: 350px;
-  background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070'); /* Clean fallback architecture photo matching your layout */
+  background-image: url('https://i.pinimg.com/1200x/72/3f/8b/723f8b9e1c4c8ac58c00e0459c2fd299.jpg');
   background-size: cover;
   background-position: center;
   animation: scaleBackground 1.5s ease-out forwards;

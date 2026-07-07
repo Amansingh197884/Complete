@@ -26,7 +26,7 @@ const ContactPage = () => {
           {/* Left Column: Info */}
           <section className="info-section">
             <span className="section-subtitle">// CONTACT US</span>
-            <h2 className="section-title">Get in touch with our expert agents</h2>
+            <h2 className="section-title">Get in touch with our expert</h2>
             <p className="section-desc">
               Our success is determined not only by the results we acquire, but also by the manner in which we achieve them on way to see that.
             </p>

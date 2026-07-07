@@ -9,6 +9,7 @@ import ContactUs from './components/ContactUs.jsx';
 import Footer from './components/Footer.jsx';
 import Slide from './components/Slide.jsx'
 import High from './components/High.jsx'
+import New from './components/New.jsx'
 export default function App() {
   return (
     <div className="bg-light min-vh-100 overflow-x-hidden">
