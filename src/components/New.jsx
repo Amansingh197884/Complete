@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+import { Link } from 'react-router-dom';
 const ContactPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,7 +13,9 @@ const ContactPage = () => {
       <header className="contact-hero">
         <div className="hero-overlay">
           <div className="hero-content">
-            <span className="breadcrumb">HOME / CONTACT</span>
+            {/* Aapke header/breadcrumb section ke andar jahan text hai */}
+<Link to="/" className="text-decoration-none text-white me-1">HOME</Link> 
+<span>/ CONTACT</span>
             <h1>Contact</h1>
           </div>
         </div>
