@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 
 export default function ContactUs() {
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
     const [sent, setSent] = useState(false);
     const [loading, setLoading] = useState(false);
 
@@ -10,7 +10,7 @@ export default function ContactUs() {
         e.preventDefault();
         setLoading(true);
 
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwuB9wDEohh7KdQ6oxbAy6N5anSv64dOXVt4hrM_QRQAPgpesC2lfBkA7Tlx6XojOB8OA/exec";
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx2AsJs_ZCn4eR1cTOrzJ5jq3zBJjL1Ld9RQrlGAhB2sU2Vrj23WAueefaeCueZlDlx/exec";
 
         try {
             await fetch(GOOGLE_SCRIPT_URL, {
@@ -23,11 +23,11 @@ export default function ContactUs() {
             });
 
             setSent(true);
-            setFormData({ name: '', email: '', message: '' });
+            setFormData({ name: '', email: '', phone: '', message: '' });
             setTimeout(() => setSent(false), 3000);
         } catch (error) {
             console.error("Error", error);
-            
+            alert("Something went wrong. Please try again!");
         } finally {
             setLoading(false);
         }
@@ -71,23 +71,30 @@ export default function ContactUs() {
                             {sent ? (
                                 <div className="text-center py-5 animate__animated animate__zoomIn">
                                     <h3 className="text-success fw-bold">Message Logged!</h3>
-                                    <p className="text-muted">Data successfully saved to Google Sheet.</p>
                                 </div>
                             ) : (
                                 <form onSubmit={onSubmit}>
                                     <div className="mb-4">
-                                        <label className="form-label  small fw-bold ">Full Name</label>
+                                        <label className="form-label small fw-bold ">Full Name</label>
                                         <input type="text" className="form-control bg-dark text-white border-secondary custom-input-focus" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="Aman Singh" />
                                     </div>
+
                                     <div className="mb-4">
                                         <label className="form-label text-secondary small fw-bold ">Email Address</label>
                                         <input type="email" className="form-control bg-dark text-white border-secondary custom-input-focus" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="aman@example.com" />
                                     </div>
+
+                                    <div className="mb-4">
+                                        <label className="form-label text-secondary small fw-bold ">Phone Number</label>
+                                        <input type="tel" className="form-control bg-dark text-white border-secondary custom-input-focus" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} placeholder="+1 (555) 000-0000" />
+                                    </div>
+
                                     <div className="mb-4">
                                         <label className="form-label text-secondary small fw-bold ">Message Parameters</label>
                                         <textarea className="form-control bg-dark text-white border-secondary custom-input-focus" rows="4" required value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="Outline your project timeline..."></textarea>
                                     </div>
-                                    <button type="submit" disabled={loading} className="btn  btn-lg w-100 rounded-pill fw-bold  d-flex align-items-center justify-content-center gap-2" style={{backgroundColor: '#c8a261', color:'#fff'}}>
+
+                                    <button type="submit" disabled={loading} className="btn  btn-lg w-100 rounded-pill fw-bold  d-flex align-items-center justify-content-center gap-2" style={{ backgroundColor: '#c8a261', color: '#fff' }}>
                                         {loading ? "Sending..." : "Send Message"} <FaPaperPlane size={16} />
                                     </button>
                                 </form>
