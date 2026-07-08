@@ -15,7 +15,7 @@ const ContactPage = () => {
     e.preventDefault();
     setLoading(true);
 
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxrJV-Z-KSKgYgKcPA9YcX8Une49jGryDLp4ALBQ0TNsXtCXFJ3E0IMlHh3d25OJRzZ-g/exec";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxqNX2aA79Ijv9g8zxL5TmP_b8BrSs3-uo2SRsZOFCmQ_R6XNlFvaKpbkobnt84ZxbXzg/exec";
 
     try {
       await fetch(GOOGLE_SCRIPT_URL, {
