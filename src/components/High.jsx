@@ -12,7 +12,7 @@ const AboutSection = () => {
         "Periodic site reviews and timelines",
         "Design development and strategy"
       ],
-      image: "https://i.pinimg.com/1200x/9b/23/40/9b23405283c8fffe66a27df2d2c2bec9.jpg"
+      // image: "https://i.pinimg.com/1200x/9b/23/40/9b23405283c8fffe66a27df2d2c2bec9.jpg"
     },
     Approved: {
       description: "Our plans are approved by international safety and aesthetic boards. We ensure that every architectural detail meets the highest standards of the industry.",
@@ -22,7 +22,7 @@ const AboutSection = () => {
         "Structural Safety Approval",
         "Eco-friendly Design Certification"
       ],
-      image: "https://i.pinimg.com/1200x/64/1a/43/641a43b6386263cb9eac93c159bcb420.jpg"
+      // image: "https://i.pinimg.com/1200x/64/1a/43/641a43b6386263cb9eac93c159bcb420.jpg"
     },
     Guaranteed: {
       description: "We provide a long-term guarantee for all our projects. Our relationship with clients doesn't end at project delivery; we stand by our work for years.",
@@ -32,7 +32,7 @@ const AboutSection = () => {
         "Post-Project Maintenance Support",
         "100% Satisfaction Guarantee"
       ],
-      image: "https://i.pinimg.com/736x/7e/32/a4/7e32a43e01e30b95cca22b915f7d6664.jpg"
+      // image: "https://i.pinimg.com/736x/7e/32/a4/7e32a43e01e30b95cca22b915f7d6664.jpg"
     }
   };
 
@@ -45,7 +45,7 @@ const AboutSection = () => {
       <div className="about-visual-column">
         <div className="main-image-wrapper">
           <img 
-            src="https://i.pinimg.com/736x/7e/32/a4/7e32a43e01e30b95cca22b915f7d6664.jpg" 
+            src="https://i.pinimg.com/1200x/64/1a/43/641a43b6386263cb9eac93c159bcb420.jpg" 
             alt="Main interior" 
             className="main-about-img"
           />
@@ -54,11 +54,11 @@ const AboutSection = () => {
 
       <div className="about-content-column">
         <span className="section-subtitle">ABOUT INTERIOR</span>
-        <h2 className="section-title">We Create The Art Of Stylish Living</h2>
+        <h2 className="section-title font-serif">We Create The Art Of Stylish Living</h2>
         
-        <p className="section-description">
+        {/* <p className="section-description">
           {currentContent.description}
-        </p>
+        </p> */}
 
         <div className="tabs-navigation">
           {tabs.map((tab) => (
@@ -73,13 +73,13 @@ const AboutSection = () => {
         </div>
 
         <div className="tab-dynamic-content">
-          <div className="tab-mini-image-wrapper">
+          {/* <div className="tab-mini-image-wrapper">
             <img 
               src={currentContent.image} 
               alt={activeTab} 
               className="mini-about-img"
             />
-          </div>
+          </div> */}
           
           <div className="tab-text-details">
             <p className="tab-intro-text">

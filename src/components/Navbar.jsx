@@ -20,7 +20,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`navbar navbar-expand-lg real-estate-nav py-3 fixed-top ${isScrolled ? 'scrolled' : ''} ${isNavOpen ? 'nav-menu-mobile-open' : ''}`}>
+    <nav className={`navbar navbar-expand-lg real-estate-nav py-3 fixed-top ${isScrolled ? 'scrolled' : ''} ${isNavOpen ? 'nav-menu-mobile-open' : ''}`} >
       <div className="container">
 
         <Link className="navbar-brand text-white fw-bold fs-3 animate__animated animate__fadeInLeft" to="/">
@@ -35,30 +35,28 @@ export default function Navbar() {
           {isNavOpen ? <FaTimes size={26} /> : <FaBars size={26} />}
         </button>
 
-        <div className={`collapse navbar-collapse ${isNavOpen ? 'show text-center pt-3' : ''}`}>
-          <ul className="navbar-nav ms-auto align-items-center gap-3 gap-lg-4">
+        <div className={`collapse navbar-collapse ${isNavOpen ? 'show text-center pt-3 ' : ''}`}>
+          <ul className="navbar-nav ms-auto align-items-center  gap-3 gap-lg-4">
             <li className="nav-item">
               <Link className="nav-link nav-link-custom" to="/" onClick={() => setIsNavOpen(false)}>Home</Link>
             </li>
 
-            <li className="nav-item dropdown">
-              <a className="nav-link nav-link-custom dropdown-toggle" href="#properties" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Properties
-              </a>
-              <ul className="dropdown-menu dropdown-menu-dark border-0 shadow" aria-labelledby="navbarDropdown">
-                <li><a className="dropdown-item" href="#rentals">Rentals</a></li>
-                <li><a className="dropdown-item" href="#sale">For Sale</a></li>
-              </ul>
-            </li>
+             <li className="nav-item"><a className="nav-link nav-link-custom" href="#properties">Properties</a></li>
+            <li className="nav-item"><a className="nav-link nav-link-custom" href="#about">About</a></li>
+            <li className="nav-item"><a className="nav-link nav-link-custom" href="#contact">Contact Us</a></li>
+     
 
-            <li className="nav-item">
-              <Link to="/New" className="btn contact-btn-custom d-inline-flex align-items-center gap-2" onClick={() => setIsNavOpen(false)}>
-                Contact <FaArrowRight size={14} />
-              </Link>
-            </li>
+
+           
           </ul>
         </div>
+{/* btn  */}
 
+ <div className="d-none d-lg-block ms-5">
+           <Link to="/New" className="btn btn-outline-light rounded-2 px-4 py-2 text-capitalize btn-consultation" onClick={() => setIsNavOpen(false)}>
+                Contact <FaArrowRight size={14} />
+              </Link>
+        </div>
       </div>
     </nav>
   );

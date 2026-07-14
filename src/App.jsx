@@ -1,5 +1,5 @@
 import React from 'react';
- import Navbar from './components/Navbar.jsx';
+import Navbar from './components/Navbar.jsx';
 
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home.jsx';
@@ -17,8 +17,9 @@ const MainPage = () => {
   return (
     <>
       <Home />
-      <High />
       <AboutUs />
+      <High />
+      
       <VisionMission />
       <Amenities />
       <Slide />
@@ -32,13 +33,13 @@ const MainPage = () => {
 export default function App() {
   return (
     <div className="bg-light min-vh-100 overflow-x-hidden">
-      <Navbar /> 
-      
+      <Navbar />
+
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/new" element={<New />} />
       </Routes>
-      
+
       <Footer />
     </div>
   );

@@ -23,38 +23,40 @@ export default function Home() {
         className="animated-hero text-white"
         style={{ backgroundImage: `url(${heroImages[currentImgIndex]})` }}
       >
+        <div className="hero-overlay"></div>
+
         <div className="container text-center hero-content-wrapper pt-5 mt-5">
           <div className="animate__animated animate__fadeInDown">
-            <span className="text-uppercase tracking-widest fw-bold text-white-50 small mb-2 d-block">
+            <span className="text-warning text-uppercase mb-2 tracking-wide font-serif">
               Aajneeti Properties
             </span>
-            <h1 className="display-1 banner-h1 mb-4" style={{ letterSpacing: '-1px' }}>
+            <h1 className="display-4 fw-light mb-4 text-uppercase tracking-wider font-serif" style={{ letterSpacing: '-1px' }}>
               Find Your Place
             </h1>
           </div>
 
-          <div className="row justify-content-center mx-1 animate__animated animate__fadeInUp animate__delay-1s">
-            <div className="col-lg-8 bg-white rounded-1 p-2 shadow-lg">
+          <div className="row justify-content-center mx-1 animate__animated animate__fadeInUp animate__delay-1s home-form">
+            <div className="col-lg-8 search-container mx-auto p-2 rounded shadow-lg backdrop-blur mb-5">
               <form onSubmit={(e) => e.preventDefault()} className="row g-2 align-items-center m-0">
-                <div className="col-md-3">
-                  <select className="form-select border-0 fs-5 fw-medium text-secondary py-2 shadow-none">
-                    <option>Rentals</option>
-                    <option>For Sale</option>
-                    <option>Commercial</option>
-                  </select>
+                <div className="col-md-5">
+                  <div className="input-group">
+                    <span className="input-group-text bg-transparent border-0 text-white opacity-50"><i className="bi bi-sliders"></i></span>
+                    <select className="form-select bg-transparent border-0 text-white-50 custom-select">
+                      <option value="">Property Type</option>
+                      <option value="apartment">Apartment</option>
+                      <option value="villa">Villa</option>
+                    </select>
+                  </div>
                 </div>
 
-                <div className="col-md-6 border-start border-md-none py-1 justify-content-between d-flex align-items-center">
-                  <input
-                    type="text"
-                    className="form-control border-0 fs-5 py-2 shadow-none"
-                    placeholder="Location or keywords... "
-                  />
-                  <FaSearch className='search me-3' size={14} />
+                <div className="col-md-4">
+                  <div className="input-group">
+                    <span className="input-group-text bg-transparent border-0 text-white opacity-50"><i className="bi bi-geo-alt"></i></span>
+                    <input type="text" className="form-control bg-transparent border-0 text-white custom-input" placeholder="Location" />
+                  </div>
                 </div>
-
-                <div className="col-md-3">
-                  <button className="btn btn-home w-100 py-3 tracking-wide">
+                <div className="col-md-2 ms-md-auto">
+                  <button className="btn text-white  w-100 py-2  fw-semibold tracking-wide home-search">
                     Search
                   </button>
                 </div>
@@ -67,3 +69,4 @@ export default function Home() {
     </div>
   );
 }
+
