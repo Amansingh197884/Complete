@@ -1,86 +1,28 @@
-import React from 'react';
-import { 
-  FaSwimmingPool, 
-  FaDumbbell, 
-  FaShieldAlt, 
-  FaWifi, 
-  FaTree, 
-  FaParking, 
-  FaHome,
-  FaSpa
-
-} from 'react-icons/fa';
-
-export default function Amenities() {
-  const amenityData = [
-    { 
-      id: 1,
-      icon: <FaSwimmingPool />, 
-      title: 'Infinity Pool', 
-      desc: 'Climatized luxury pool with panoramic views for ultimate relaxation.' 
-    },
-    { 
-      id: 2,
-      icon: <FaDumbbell />, 
-      title: 'Wellness Lab', 
-      desc: 'High-end fully equipped gym setup for your complete fitness routine.' 
-    },
-    { 
-      id: 3,
-      icon: <FaShieldAlt />, 
-      title: 'Grade-A Security', 
-      desc: 'Encrypted smart access gates and 24/7 continuous surveillance.' 
-    },
-    { 
-      id: 4,
-      icon: <FaWifi />, 
-      title: 'Gigabit Arrays', 
-      desc: 'Symmetrical ultra-high-speed network connectivity everywhere.' 
-    },
-    { 
-      id: 5,
-      icon: <FaTree />, 
-      title: 'Eco Atriums', 
-      desc: 'Air-purifying botanical gardens and lush green refreshing spaces.' 
-    },
-    { 
-      id: 6,
-      icon: <FaParking />, 
-      title: 'Automated Valet', 
-      desc: 'Smart parking systems with EV charging docks integrated.' 
-    },
-     { 
-      id: 7,
-      icon: <FaHome />, 
-      title: 'Smart Living', 
-      desc: 'Fully integrated IoT automated home automation systems at your fingertips.' 
-    },
-    { 
-      id: 8,
-      icon: <FaSpa />, 
-      title: 'Luxury Spa', 
-      desc: 'Premium therapeutic massage rooms and steam sauna chambers.' 
-    }
+const Amenities = () => {
+  const amenitiesData = [
+    { image: homeImg, title: "Clubhouse with indoor games" },
+    { image: gymImg, title: "Fully equipped gymnasium" },
+    { image: mainRoomImg, title: "Multipurpose hall" },
+    { image: amanImg, title: "Yoga and meditation zone" },
   ];
 
   return (
-    <section className="amenities-section">
-      <div className="amenities-container">
-                <h2 className="display-5 fw-bold text-center text-dark ">Premium Amenities</h2>
-            <p className="text-center text-muted  fw-semibold">Explore premium enhancements running directly on hardware-accelerated interactive carousels.</p>
+    <section className="amenities-section position-relative d-flex align-items-center">
+      <div className="amenities-bg"></div>
 
-        <div className="amenities-grid">
-          {amenityData.map((item) => (
-            <div key={item.id} className="amenity-card">
-             
-              <div className="hover-slide-bg"></div>
-              
-              <div className="card-content">
-                <div className="amenity-icon">
-                  {item.icon}
-                </div>
-                <h3 className="amenity-title">{item.title}</h3>
-                <p className="amenity-description">{item.desc}</p>
+      <div className="container position-relative z-1 py-5">
+        <div className="row g-4 justify-content-center">
+          {amenitiesData.map((item, index) => (
+            <div key={index} className="col-6 col-md-4 col-lg-3">
+              <div className="amenity-card text-center d-flex flex-column align-items-center justify-content-center h-100 p-3">
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="amenity-icon-img mb-3" 
+                />
+                <p className="amenity-title m-0 text-dark fw-normal">
+                  {item.title}
+                </p>
               </div>
             </div>
           ))}
@@ -88,4 +30,6 @@ export default function Amenities() {
       </div>
     </section>
   );
-}
+};
+
+export default Amenities;
