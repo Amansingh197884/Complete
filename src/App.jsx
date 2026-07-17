@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home.jsx';
 import AboutUs from './components/AboutUs.jsx';
 import VisionMission from './components/VisionMission.jsx';
-import Amenities from './components/Amenities.jsx';
+// import Amenities from './components/Amenities.jsx';
 import Testimonials from './components/Testimonials.jsx';
 import ContactUs from './components/ContactUs.jsx';
 import Slide from './components/Slide.jsx';
@@ -21,7 +21,7 @@ const MainPage = () => {
       <High />
       
       <VisionMission />
-      <Amenities />
+      {/* <Amenities /> */}
       <Slide />
       <Testimonials />
       <ContactUs />
